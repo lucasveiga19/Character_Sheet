@@ -53,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:onClick="gerarPersonagem"
         android:text="Gerar Novo Personagem"
         android:textColorHighlight="#A66300"
         android:textColorLink="#AA6500"
