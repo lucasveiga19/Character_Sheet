@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
         name.setText("Nome: "+nomes[random.nextInt(12)]);
         raca.setText("Raça: "+racas[random.nextInt(4)]);
 
-        double forcas = random.nextInt(6);
-        double destrezz = random.nextInt(6);
-        double constit = random.nextInt(6);
-        double inteli = random.nextInt(6);
-        double cariss = random.nextInt(6);
-        double sabe = random.nextInt(6);
+        double forcas = rolarDados();
+        double destrezz = rolarDados();
+        double constit = rolarDados();
+        double inteli = rolarDados();
+        double cariss = rolarDados();
+        double sabe = rolarDados();
 
         if(raca.toString().equals("Anão")){
             constit += 1;
@@ -75,4 +75,15 @@ public class MainActivity extends AppCompatActivity {
         vida.setText("Pontos de Vida: "+pontosVida);
     }
 
+    public static int rolarDados() {
+        Random random = new Random();
+        int soma = 0;
+
+        for (int i = 0; i < 3; i++) {
+            int dado = random.nextInt(6) + 1;
+            soma += dado;
+        }
+
+        return soma;
+    }
 }
