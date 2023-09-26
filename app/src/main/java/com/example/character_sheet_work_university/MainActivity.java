@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView caris;
     private TextView sab;
 
+    private ImageView perfil;
+    private final int[] imagens = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5, R.drawable.img6, R.drawable.img7, R.drawable.img8, R.drawable.img9};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         vida = findViewById(R.id.vida);
         caris = findViewById(R.id.caris);
         sab = findViewById(R.id.sab);
+        perfil = findViewById(R.id.perfil);
+
+        perfil.setImageResource(R.drawable.img0);
     }
 
     @SuppressLint("SetTextI18n")
@@ -45,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         name.setText("Nome: "+nomes[random.nextInt(12)]);
         raca.setText("Raça: "+racas[random.nextInt(4)]);
+        perfil.setImageResource(imagens[random.nextInt(9)]);
 
         double forcas = rolarDados();
         double destrezz = rolarDados();
